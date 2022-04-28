@@ -1,43 +1,52 @@
 import React, { useEffect, useState, useMemo } from "react";
 import styles from "../../styles/SideBar.module.scss";
-import BarChart from "../../components/BarChart";
+import BarChart from "../BarChart";
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import Button from "../Button";
 import Link from "next/link";
 import Query from "@arcgis/core/rest/support/Query";
 import useLastWathTotTable from "../../hooks/useLastWathTotTable";
-import intl from "esri/intl";
-
-
-// type buildingData = {
-//   YEARBUILT: intl,
-//   SHORTNAME: String,
-//   LONGNAME: String,
-//   GROSSAREA: intl,
-//   BUILDINGID: intl,
-// }
 
 const BuildingFocussedComponent = ({ buildingData }) => {
   const {
     YEARBUILT: yearBuilt,
     SHORTNAME: shortName,
     LONGNAME: longName,
-    GROSSAREA: grossArea,
+    MANUALGROS: grossArea,
     BUILDINGID: id,
   } = buildingData || {};
 
   const createQuery = (): Query => {
     let q = new Query();
     q.outFields = ["wathtot", "Time"];
-    q.where = `BUILDINGID = '${id}' AND time >= CURRENT_TIMESTAMP - INTERVAL '8982' HOUR AND time <= CURRENT_TIMESTAMP - INTERVAL '60' HOUR`;
+    q.where = `BUILDINGID = '${id}' AND time >= CURRENT_TIMESTAMP - INTERVAL '48' HOUR AND time <= CURRENT_TIMESTAMP - INTERVAL '24' HOUR`;
     return q;
   };
+
+  const createQuery2 = (): Query => {
+    let q = new Query();
+    q.outFields = ["wathtot", "Time"];
+    q.where = `BUILDINGID = '${id}' AND time >= CURRENT_TIMESTAMP - INTERVAL '72' HOUR AND time <= CURRENT_TIMESTAMP - INTERVAL '48' HOUR`;
+    return q;
+  };
+
+  let sum2 = 0;
+  let data2 = useLastWathTotTable(createQuery2());
+  console.log(data2);
+  data2
+    ? data2.map((e) => {
+        sum2 = (e.wathtot/1000.0);
+      })
+    : 0;
+
   let sum = 0;
+  let oneDayDiff = 0;
   let data = useLastWathTotTable(createQuery());
   console.log(data);
   data
     ? data.map((d) => {
-        sum += (d.wathtot/1000.0);
+        sum = ((d.wathtot/1000.0)-sum2)*365;
+        oneDayDiff = (d.wathtot/1000.0)-sum2;
       })
     : 0;
   let avg = (sum/365);
