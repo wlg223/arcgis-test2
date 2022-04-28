@@ -1,0 +1,93 @@
+@import "./typography.scss";
+@import "./colors.scss";
+
+.buildingName {
+  @extend .headingTwo;
+  display: inline;
+}
+
+.header {
+  display: "flex";
+  align-items: "center";
+  padding: 2rem 0;
+
+  .arrow {
+    display: inline;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(0.95);
+      cursor: pointer;
+    }
+  }
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+hr {
+  margin: 0rem 0 2rem 0;
+  border: none;
+  border-top: 2px solid $text;
+  width: 10rem;
+  background-color: $text;
+}
+
+.equivalenciesSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  position: relative;
+  width: 28%;
+  margin: 0.5rem;
+  background-color: $surface;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 1rem 1rem 0.25rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+
+  img {
+    width: 50%;
+    height: auto;
+  }
+
+  .content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  h3 {
+    @extend .subtitle;
+  }
+
+  p {
+    @extend .body;
+    // justify-self: "flex-end";
+  }
+}

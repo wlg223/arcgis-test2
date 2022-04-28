@@ -1,0 +1,3 @@
+const API_KEY = "AAPK789039d962bd4c77aa4b181dbd0b4407Tx1dIccUkYkjp9hp3BugwmxFdzAhroKRZYu1UxKVHUyW5IYSRwGQpxTWKCS-INN3";
+
+export {API_KEY}

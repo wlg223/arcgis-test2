@@ -1,0 +1,81 @@
+.headingOne {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 46px;
+  line-height: 54px;
+  margin: 0 0 1rem 0;
+}
+
+.headingTwo {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: medium;
+  font-size: 38px;
+  line-height: 44px;
+  margin: 0 0 0.5rem 0;
+}
+
+.headingThree {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: medium;
+  font-size: 28px;
+  line-height: 24px;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  font-feature-settings: "pnum" on, "onum" on;
+  margin: 0 0 0.35rem 0;
+}
+
+.body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 36px;
+  font-feature-settings: "pnum" on, "onum" on;
+  margin: 0 0 0.35rem 0;
+}
+
+.overline {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-feature-settings: "pnum" on, "onum" on;
+  margin: 0 0 0.15rem 0;
+}
+
+.button {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.0425em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0.75rem 1rem;
+}
+
+.caption {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 28px;
+  letter-spacing: 0.4px;
+  margin: 0 0 0.35rem 0;
+}

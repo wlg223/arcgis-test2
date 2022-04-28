@@ -1,0 +1,42 @@
+@import "./colors.scss";
+@import "./typography.scss";
+
+html,
+body {
+  color: $on-surface;
+  background-color: $background;
+  padding: 0;
+  margin: 0 !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1 {
+  @extend .headingOne;
+}
+
+h2 {
+  @extend .headingTwo;
+}
+
+h3 {
+  @extend .headingThree;
+}
+
+p {
+  @extend .body;
+}
+
+button {
+  @extend .button;
+}
+
+a {
+  @extend .button;
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

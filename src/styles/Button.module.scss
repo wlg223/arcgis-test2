@@ -1,0 +1,18 @@
+@import "./colors.scss";
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border-color: $text;
+  border-width: 1;
+  border-color: $text;
+  color: $text;
+  background-color: $secondary;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(0.98);
+  }
+}

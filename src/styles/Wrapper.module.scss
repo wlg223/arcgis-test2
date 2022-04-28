@@ -1,0 +1,15 @@
+@import "./colors.scss";
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  background-color: $background;
+}
+
+.wrapper {
+  width: 90%;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: "flex";
+}
